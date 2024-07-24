@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/5ce8e48c-aad6-4077-bf02-c82d60fe9364/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/cdrcloudwebidcaller",
+    "appService.deploySubpath": "."
+}
