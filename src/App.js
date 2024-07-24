@@ -6,7 +6,9 @@ import React, { useState, useEffect } from 'react';
 const App = () => {
    const [cdrCloudIDs, setcdrCloudIDs] = useState([]);
    const functURL = process.env.CDR_ID_FUNCT_URL 
+   
    console.log('configured URL: ', functURL)
+
    useEffect(() => {
       fetch(functURL)
          .then((response) => response.json())
@@ -23,11 +25,10 @@ const App = () => {
     <div className="cdrCloudIDs-container">
        {cdrCloudIDs.map((cdrCloudID) => {
           return (
-             <div className="cdrCloudID-id" key={cdrCloudID.url}>
-                <h2 className="cdrCloudID-title">{cdrCloudID.title}</h2>
-                <img src={cdrCloudID.hdurl} className="imgcenter" alt='NASA' width='50%' />
-                <p className="cdrCloudID-explanation">{cdrCloudID.explanation}</p>
-                <p className="cdrCloudID-hdurl">{cdrCloudID.hdurl}</p>
+             <div className="cdrCloudID-id" key={cdrCloudID.identity}>
+                <h2 className="cdrCloudID-title">{cdrCloudID.name}</h2>
+                <p className="cdrCloudID-explanation">{cdrCloudID.headers}</p>
+                <p className="cdrCloudID-hdurl">{cdrCloudID.uri}</p>
              </div>
           );
        })}
